@@ -1,32 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-<h1>Atlantis College of Management</h1>
+<h1 class="mt-5"> Atlantis College of Management</h1>
   <!-- <a (click)="initiateRecording()" class="btn btn-primary" *ngIf="!recording"> Start Recording </a>
     <a (click)="stopRecording()" class="btn btn-danger" *ngIf="recording"> Stop Recording </a>
     <div class="clearfix"></div>
     <audio controls="" *ngIf="url">
         <source [src]="sanitize(url)" type="audio/wav">
     </audio> -->
-
-    <router-outlet></router-outlet>
+    <div  class="main-content">
+      <router-outlet></router-outlet>
+    </div>
     <!-- Grid row -->
-    <div class="row justify-content-center">
+    <div class="nav-panel row justify-content-center">
 
       <!-- Grid column -->
       <div class="col-md-6">
 
-        <ul class="nav peach-gradient lighten-3 py-4 font-weight-bold z-depth-1  justify-content-center">
+        <ul class="nav blue-gradient lighten-3 py-4 font-weight-bold z-depth-1 justify-content-around">
           <li class="nav-item">
-            <a class="nav-link active white-text" href="#!">Active</a>
+            <a class="nav-link white-text"
+            [routerLink]="['/speaking']" routerLinkActive="router-link-active"
+            href="#!">Speaking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link white-text" href="#!">Link</a>
+            <a class="nav-link white-text"
+            [routerLink]="['/writing']" routerLinkActive="router-link-active"
+            href="#!">Writing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link white-text" href="#!">Link</a>
+            <a class="nav-link white-text"
+            [routerLink]="['/reading']" routerLinkActive="router-link-active"
+            href="#!">Reading</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link white-text" href="#!">Link</a>
+            <a class="nav-link white-text"
+            [routerLink]="['/listening']" routerLinkActive="router-link-active"
+            href="#!">Listening</a>
           </li>
         </ul>
 

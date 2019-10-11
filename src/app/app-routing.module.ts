@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
-
+import { SpeakingComponent } from './speaking/speaking.component';
+import { WritingComponent } from './writing/writing.component';
+import { ReadingComponent } from './reading/reading.component';
+import { ListeningComponent } from './listening/listening.component';
 
 const routes: Routes = [
-  {path: '', component: ProfileComponent}
+  {path: '', component: ProfileComponent},
+  {path: 'speaking', component: SpeakingComponent},
+  {path: 'writing', component: WritingComponent},
+  {path: 'reading', component: ReadingComponent},
+  {path: 'listening', component: ListeningComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
