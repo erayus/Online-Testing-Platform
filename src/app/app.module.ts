@@ -9,6 +9,7 @@ import { SpeakingComponent } from './speaking/speaking.component';
 import { WritingComponent } from './writing/writing.component';
 import { ReadingComponent } from './reading/reading.component';
 import { ListeningComponent } from './listening/listening.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListeningComponent } from './listening/listening.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
