@@ -1,6 +1,11 @@
 .main-content{
-  height: 500px
+  height: 540px
 }
 .nav-panel{
 
+}
+.router-link-active{
+  background: white;
+  color: dodgerblue !important;
+  border-radius: 2px;
 }
