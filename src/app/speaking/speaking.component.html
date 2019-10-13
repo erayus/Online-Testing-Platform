@@ -1,15 +1,23 @@
+<div class="speaking-wrapper pt-5">
 
-<p><em>Look at the text below.
+<p><strong><em>Look at the text below.
   In 40 seconds, you must read this text aloud as naturally and clearly as possible.
   You have 40 seconds to read aloud.
 </em>
+</strong>
 </p>
 
-<button (click)="triggerTest()">Start</button>
+<button
+  class= "btn"
+  [ngClass]="{
+    'btn-primary': testMode == 'start',
+    'btn-danger': testMode == 'stop' ,
+    'btn-info': testMode == 'retry'}"
+    (click)="triggerTest()">{{testMode}}</button>
 <div *ngIf="!isRecording">Beginning in {{prepareDuration}} seconds</div>
 <div *ngIf="isRecording">Recording ends in {{recordingDuration}} seconds</div>
 <br/>
-<div class="container">
+<div class="container border pt-3 z-depth-1">
     <p>Charles Darwin published his paper “On the Origin of Species” in 1859.
         It is one of the most well-known pieces of scientific literature in human history.
         In the paper, Darwin proposes the theory of natural selection.
@@ -19,3 +27,4 @@
       </p>
 </div>
 
+</div>
