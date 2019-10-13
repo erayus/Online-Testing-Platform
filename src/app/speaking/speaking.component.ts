@@ -53,7 +53,6 @@ export class SpeakingComponent implements OnInit {
       }
     }, 1000);
   }
-
   startRecording(){
     if ("webkitSpeechRecognition" in window) {
     navigator.mediaDevices.getUserMedia({ audio: true })
