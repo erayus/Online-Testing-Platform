@@ -1,4 +1,10 @@
 .profile-wrapper{
   height: 100%;
 }
+.profile-card{
+  height: 100%;
+}
+.profile-img{
+  margin-top: -50px;
+}
 

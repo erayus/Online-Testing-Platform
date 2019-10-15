@@ -4,7 +4,8 @@ h1:hover{
 }
 .main-content{
   height: 500px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .nav-panel{
 
