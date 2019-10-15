@@ -26,8 +26,12 @@
         This means that later generations are likely to inherit these stronger genetic traits.
       </p>
 </div>
-<div class="result animated bounce">
-  hello
+<div class="result-overlay" *ngIf="showResult" (click)="toggleResultDisplay()" >
+  <div class="result animated bounce">
+    <h1>Result</h1>
+    <h2>{{result}}%</h2>
+  </div>
 </div>
+
 
 </div>

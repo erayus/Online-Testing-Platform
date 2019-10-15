@@ -1,0 +1,18 @@
+.result-overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 500;
+}
+.result{
+  background: white;
+  border-radius: 4px;
+  color: black;
+  width: 50%;
+  position: fixed;
+  top: 30%;
+  left: 25%;
+  z-index: 1000;
+}

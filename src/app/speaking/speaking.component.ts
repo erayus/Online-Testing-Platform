@@ -8,17 +8,19 @@ declare var webkitSpeechRecognition: any;
 })
 export class SpeakingComponent implements OnInit {
   recognition: any;
-  $result: any;
   testMode = 'start';
   isRecording = false;
   prepareDuration = 40;
   recordingDuration = 40;
   prepareInterval;
   recordingInterval;
+  showResult = false;
+  result: number;
+  testingPassage = `Charles Darwin published his paper “On the Origin of Species” in 1859. It is one of the most well-known pieces of scientific literature in human history. In the paper, Darwin proposes the theory of natural selection. He states that for any generation of any species, there will always be a struggle for survival. Individuals who are better suited to the environment are “fitter”, and therefore have a much higher chance of surviving and reproducing. This means that later generations are likely to inherit these stronger genetic traits.`;
   constructor() {}
 
   ngOnInit() {
-    this.$result = document.getElementById('result');
+
   }
   triggerTest(){
     switch (this.testMode) {
@@ -95,10 +97,23 @@ export class SpeakingComponent implements OnInit {
       });
 
     }
-
   }
 
   compare(userInput: string){
-    console.log('User Input: ', userInput);
+    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,/g, "").replace("'s", 'is').split(' ');
+    const splitUser = userInput.split(' ');
+    const total = splitPassage.length;
+    let score = 0;
+
+    for ( let i = 0; i < splitPassage.length; i++ ) {
+      score = splitUser[i] == splitPassage[i] ? score + 1  : score;
+    }
+    this.result = Math.ceil(score / total * 100 );
+    this.showResult = true;
+    console.log('User Input: ', this.result);
+  }
+
+  toggleResultDisplay(){
+    this.showResult = this.showResult ? !this.showResult : this.showResult;
   }
 }
