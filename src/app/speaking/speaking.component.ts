@@ -69,25 +69,36 @@ export class SpeakingComponent implements OnInit {
                 for (var i = event.resultIndex; i < event.results.length; ++i) {
                   if (event.results[i].isFinal) {
                     finalScripts += event.results[i][0].transcript;
+                    console.log(finalScripts);
                     // this.$result.innerHTML = finalScripts;
                     // console.log(this.result);
-                  } else {
-                    console.log('not final');
                   }
                 }
               };
+              this.recordingDuration = 40;
+              this.recordingInterval = setInterval(() => {
+                if (this.recordingDuration > 0) {
+                  this.recordingDuration -= 1;
+                } else {
+                  clearInterval(this.recordingInterval);
+                  this.testMode = 'retry';
+                  this.isRecording = false;
+
+                  this.recognition.stop();
+
+                  setTimeout(()=>{
+                    this.compare(finalScripts);
+                  }, 3000)
+
+                }
+              }, 1000);
       });
+
     }
-    this.recordingDuration = 40;
-    this.recordingInterval = setInterval(() => {
-      if (this.recordingDuration > 0) {
-        this.recordingDuration -= 1;
-      } else {
-        clearInterval(this.recordingInterval);
-        this.recognition.stop();
-        this.isRecording = false;
-      }
-    }, 1000);
+
   }
 
+  compare(userInput: string){
+    console.log('User Input: ', userInput);
+  }
 }

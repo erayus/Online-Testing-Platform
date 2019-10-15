@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/animate.css/animate.min.css",
               "node_modules/mdbootstrap/css/bootstrap.min.css",
               "node_modules/mdbootstrap/css/mdb.min.css",
               "node_modules/mdbootstrap/css/mdb.lite.min.css",

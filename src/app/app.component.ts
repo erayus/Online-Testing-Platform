@@ -10,11 +10,11 @@ import { AmazonService } from './amazon-service.service';
 })
 export class AppComponent {
 
-   //Lets initiate Record OBJ
+    // Lets initiate Record OBJ
     private record;
-    //Will use this flag for detect recording
+    // Will use this flag for detect recording
     private recording = false;
-    //Url of Blob
+    // Url of Blob
     private url;
     private error;
     constructor(private domSanitizer: DomSanitizer,
