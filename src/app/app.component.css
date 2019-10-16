@@ -1,14 +1,12 @@
-
-h1:hover{
-  cursor: pointer;
-}
 .main-content{
-  height: 500px;
+  height: 100%px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 .nav-panel{
-
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
 }
 .router-link-active{
   background: white;

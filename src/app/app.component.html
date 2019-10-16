@@ -21,9 +21,9 @@
     <div class="nav-panel row justify-content-center">
 
       <!-- Grid column -->
-      <div class="col-md-6">
+      <div class="col-md-5">
 
-        <ul class="nav blue-gradient lighten-3 py-2 font-weight-bold z-depth-1 justify-content-around">
+        <ul class="nav blue-gradient lighten-3 py-2 font-weight-bold z-depth-1 justify-content-around rounded">
           <li class="nav-item">
             <a class="nav-link white-text"
             [routerLink]="['/speaking']" routerLinkActive="router-link-active"
@@ -34,15 +34,35 @@
             [routerLink]="['/writing']" routerLinkActive="router-link-active"
             href="#!">Writing</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link white-text"
-            [routerLink]="['/reading']" routerLinkActive="router-link-active"
-            href="#!">Reading</a>
+
+
+          <li class="nav-item dropup">
+            <a class="nav-link white-text dropdown-toggle"
+               id="navbarDropdownMenuLink" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"
+            [routerLink]="['/reading']" routerLinkActive="router-link-active">Reading</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Fill In The Blanks</a>
+                <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
+                <a class="dropdown-item" href="#">Reorder Paragraph</a>
+                <a class="dropdown-item" href="#">Drag & Drop</a>
+                <a class="dropdown-item" href="#">Multiple Choice, Single Answer</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link white-text"
-            [routerLink]="['/listening']" routerLinkActive="router-link-active"
-            href="#!">Listening</a>
+
+
+          <li class="nav-item dropup">
+              <a class="nav-link white-text dropdown-toggle"
+              id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"
+           [routerLink]="['/listening']" routerLinkActive="router-link-active">Listening</a>
+           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item" href="#">Fill In The Blanks</a>
+               <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
+               <a class="dropdown-item" href="#">Reorder Paragraph</a>
+               <a class="dropdown-item" href="#">Drag & Drop</a>
+               <a class="dropdown-item" href="#">Multiple Choice, Single Answer</a>
+             </div>
           </li>
         </ul>
 
