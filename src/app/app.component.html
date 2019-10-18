@@ -24,12 +24,21 @@
       <div class="col-md-5">
 
         <ul class="nav blue-gradient lighten-3 py-2 font-weight-bold z-depth-1 justify-content-around rounded">
+
           <li class="nav-item dropup">
             <a class="nav-link white-text dropdown-toggle"
-               id="navbarDropdownMenuLink" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false" routerLinkActive="router-link-active" >Speaking</a>
+               id="navbarDropdownMenuLink"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"
+               [routerLink]="['/speaking']"
+               routerLinkActive="router-link-active">
+               Speaking</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" [routerLink]="['/speaking', 'read-aloud']" routerLinkActive="router-link-active" >Read Aloud</a>
+                <a class="dropdown-item"
+                 routerLink = "/speaking/read-aloud"
+                 routerLinkActive="router-link-active"
+                 [routerLinkActiveOptions]="{exact: true}"
+                 >Read Aloud</a>
                 <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
                 <a class="dropdown-item" href="#">Reorder Paragraph</a>
                 <a class="dropdown-item" href="#">Drag & Drop</a>

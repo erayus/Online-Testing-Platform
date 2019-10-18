@@ -10,8 +10,8 @@ import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
-  {path: 'speaking', component: SpeakingComponent, children:[
-    {path: 'read-aloud', component: ReadAloudComponent }
+  {path: 'speaking', children: [
+    {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  }
   ]},
   {path: 'writing', component: WritingComponent},
   {path: 'reading', component: ReadingComponent},
