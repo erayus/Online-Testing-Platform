@@ -30,8 +30,8 @@
                id="navbarDropdownMenuLink"
                data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false"
-               [routerLink]="['/speaking']"
-               routerLinkActive="router-link-active">
+               [ngClass]="{'router-link-active': pathList.indexOf('speaking') !== -1}"
+               >
                Speaking</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item"
@@ -56,8 +56,10 @@
           <li class="nav-item dropup">
             <a class="nav-link white-text dropdown-toggle"
                id="navbarDropdownMenuLink" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false"
-            [routerLink]="['/reading']" routerLinkActive="router-link-active">Reading</a>
+               aria-haspopup="true"
+               aria-expanded="false"
+               [ngClass]="{'router-link-active': pathList.indexOf('reading') !== -1}"
+               routerLinkActive="router-link-active">Reading</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Fill In The Blanks</a>
                 <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
@@ -72,7 +74,8 @@
               <a class="nav-link white-text dropdown-toggle"
               id="navbarDropdownMenuLink" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false"
-           [routerLink]="['/listening']" routerLinkActive="router-link-active">Listening</a>
+              [ngClass]="{'router-link-active': pathList.indexOf('listening') !== -1}"
+            routerLinkActive="router-link-active">Listening</a>
            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                <a class="dropdown-item" href="#">Fill In The Blanks</a>
                <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>

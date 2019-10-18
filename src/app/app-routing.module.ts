@@ -6,11 +6,12 @@ import { WritingComponent } from './writing/writing.component';
 import { ReadingComponent } from './reading/reading.component';
 import { ListeningComponent } from './listening/listening.component';
 import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
+import { NeverActivateGuard } from './share/never-activate.guard';
 
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
-  {path: 'speaking', children: [
+  {path: 'speaking', component: SpeakingComponent, children: [
     {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  }
   ]},
   {path: 'writing', component: WritingComponent},
@@ -18,8 +19,10 @@ const routes: Routes = [
   {path: 'listening', component: ListeningComponent},
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [NeverActivateGuard]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 declare var webkitSpeechRecognition: any;
 
 @Component({
@@ -26,7 +27,6 @@ export class ReadAloudComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-
   }
   triggerTest(){
     switch (this.testMode) {
