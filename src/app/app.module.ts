@@ -14,6 +14,9 @@ import { LineChartComponent } from './profile/line-chart/line-chart.component';
 import { RadarChartComponent } from './profile/radar-chart/radar-chart.component';
 import { PieChartComponent } from './profile/pie-chart/pie-chart.component';
 import { BarChartComponent } from './profile/bar-chart/bar-chart.component';
+import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
+import { RepeatSentenceComponent } from './speaking/repeat-sentence/repeat-sentence.component';
+import { DescribeImageComponent } from './speaking/describe-image/describe-image.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { BarChartComponent } from './profile/bar-chart/bar-chart.component';
     LineChartComponent,
     RadarChartComponent,
     PieChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    ReadAloudComponent,
+    RepeatSentenceComponent,
+    DescribeImageComponent
   ],
   imports: [
     BrowserModule,
