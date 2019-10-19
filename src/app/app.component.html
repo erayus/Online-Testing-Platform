@@ -39,19 +39,44 @@
                  routerLinkActive="router-link-active"
                  [routerLinkActiveOptions]="{exact: true}"
                  >Read Aloud</a>
-                <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
-                <a class="dropdown-item" href="#">Reorder Paragraph</a>
-                <a class="dropdown-item" href="#">Drag & Drop</a>
-                <a class="dropdown-item" href="#">Multiple Choice, Single Answer</a>
+                <a class="dropdown-item"
+                routerLink = "/speaking/repeat-sentence"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Repeat Sentence</a>
+                <a class="dropdown-item"
+                routerLink = "/speaking/describe-image"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Describe Image</a>
+                <a class="dropdown-item"
+                routerLink = "/speaking/retell-lecture"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Retell Lecture</a>
+                <a class="dropdown-item"
+                routerLink = "/speaking/answer-short-question"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Answer Short Question</a>
               </div>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link white-text"
-            [routerLink]="['/writing']" routerLinkActive="router-link-active"
-            href="#!">Writing</a>
+          <li class="nav-item dropup">
+            <a class="nav-link white-text dropdown-toggle"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"
+            [ngClass]="{'router-link-active': pathList.indexOf('writing') !== -1}"
+            >
+            Writing</a>
+         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+             <a class="dropdown-item"
+              routerLink = "/writing/summarize-written-text"
+              routerLinkActive="router-link-active"
+              [routerLinkActiveOptions]="{exact: true}">Summarize Written Text</a>
+             <a class="dropdown-item"
+             routerLink = "/writing/essay"
+             routerLinkActive="router-link-active"
+             [routerLinkActiveOptions]="{exact: true}">Essay</a>
+           </div>
           </li>
-
 
           <li class="nav-item dropup">
             <a class="nav-link white-text dropdown-toggle"
@@ -61,14 +86,26 @@
                [ngClass]="{'router-link-active': pathList.indexOf('reading') !== -1}"
                routerLinkActive="router-link-active">Reading</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Fill In The Blanks</a>
-                <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
-                <a class="dropdown-item" href="#">Reorder Paragraph</a>
-                <a class="dropdown-item" href="#">Drag & Drop</a>
-                <a class="dropdown-item" href="#">Multiple Choice, Single Answer</a>
+                <a class="dropdown-item"
+                routerLink = "/reading/fill-in-the-blanks"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Fill In The Blanks</a>
+                <a class="dropdown-item"
+                >Multiple Choice, Multiple Answer</a>
+                <a class="dropdown-item"
+                routerLink = "/reading/reorder-paragraph"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Reorder Paragraph</a>
+                <a class="dropdown-item"
+                routerLink = "/reading/drag-drop"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Drag & Drop</a>
+                <a class="dropdown-item"
+                routerLink = "/reading/multiple-choice-single-answer"
+                routerLinkActive="router-link-active"
+                [routerLinkActiveOptions]="{exact: true}">Multiple Choice, Single Answer</a>
               </div>
           </li>
-
 
           <li class="nav-item dropup">
               <a class="nav-link white-text dropdown-toggle"
@@ -77,11 +114,38 @@
               [ngClass]="{'router-link-active': pathList.indexOf('listening') !== -1}"
             routerLinkActive="router-link-active">Listening</a>
            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-               <a class="dropdown-item" href="#">Fill In The Blanks</a>
-               <a class="dropdown-item" href="#">Multiple Choice, Multiple Answer</a>
-               <a class="dropdown-item" href="#">Reorder Paragraph</a>
-               <a class="dropdown-item" href="#">Drag & Drop</a>
-               <a class="dropdown-item" href="#">Multiple Choice, Single Answer</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/summarize-spoken-text"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Summarize Spoken Text</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Multiple Choice, Multiple Answer</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Fill In Blanks</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Highlight Correct Summary</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Multiple Choice, Single Answer</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Select Missing Word</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Highlight Incorrect Words</a>
+               <a class="dropdown-item"
+               routerLink = "/listening/multiple-choice-single-answer"
+               routerLinkActive="router-link-active"
+               [routerLinkActiveOptions]="{exact: true}">Write From Dictation</a>
              </div>
           </li>
         </ul>
