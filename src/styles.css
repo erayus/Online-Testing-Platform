@@ -2,7 +2,7 @@
 body{
   background: url('http://coolvibe.com/wp-content/uploads/2010/05/sci-fi-wallpaper18.jpg');
   background-size: cover;
+  background-repeat: no-repeat;;
   overflow-x: hidden;
-  overflow-y: hidden;
   color: white
 }

@@ -18,15 +18,13 @@ export class ReadAloudComponent implements OnInit {
   recordingInterval;
   showResult = false;
   result: number;
-  testingPassage = `Charles Darwin published his paper “On the Origin of Species” in 1859.
-   It is one of the most well-known pieces of scientific literature in human history.
-   In the paper, Darwin proposes the theory of natural selection.
-   He states that for any generation of any species, there will always be a struggle for survival.
-   Individuals who are better suited to the environment are “fitter”, and therefore have a much higher chance of surviving and reproducing.
-   This means that later generations are likely to inherit these stronger genetic traits.`;
+  testingPassage = `Charles Darwin published his paper "On the Origin of Species" in 1859. It is one of the most well-known pieces of scientific literature in human history. In the paper, Darwin proposes the theory of natural selection. He states that for any generation of any species, there will always be a struggle for survival. Individuals who are better suited to the environment are "fitter", and therefore have a much higher chance of surviving and reproducing. This means that later generations are likely to inherit these stronger genetic traits.`;
+  userInput: string;
   constructor() {}
 
   ngOnInit() {
+    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,|"/g, "").split(' ');
+    console.log('Split Passage: ', splitPassage);
   }
   triggerTest(){
     switch (this.testMode) {
@@ -40,6 +38,10 @@ export class ReadAloudComponent implements OnInit {
           this.isRecording = false;
           this.recognition.stop();
           clearInterval(this.recordingInterval);
+          setTimeout(() => {
+            this.compare(this.userInput);
+          }, 1000);
+
         }
         clearInterval(this.prepareInterval);
         break;
@@ -61,6 +63,7 @@ export class ReadAloudComponent implements OnInit {
       }
     }, 1000);
   }
+
   startRecording(){
     if ("webkitSpeechRecognition" in window) {
     navigator.mediaDevices.getUserMedia({ audio: true })
@@ -71,13 +74,12 @@ export class ReadAloudComponent implements OnInit {
               this.recognition.interimResults = true;
 
               this.recognition.start();
-              let finalScripts = '';
+              this.userInput = '';
 
               this.recognition.onresult = (event) => {
                 for (let i = event.resultIndex; i < event.results.length; ++i) {
                   if (event.results[i].isFinal) {
-                    finalScripts += event.results[i][0].transcript;
-                    console.log(finalScripts);
+                    this.userInput += event.results[i][0].transcript;
                     // this.$result.innerHTML = finalScripts;
                     // console.log(this.result);
                   }
@@ -95,8 +97,8 @@ export class ReadAloudComponent implements OnInit {
                   this.recognition.stop();
 
                   setTimeout(()=>{
-                    this.compare(finalScripts);
-                  }, 3000)
+                    this.compare(this.userInput);
+                  }, 2000);
 
                 }
               }, 1000);
@@ -106,17 +108,21 @@ export class ReadAloudComponent implements OnInit {
   }
 
   compare(userInput: string){
-    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,/g, "").replace("'s", 'is').split(' ');
+    console.log("User Input:", userInput);
+    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,/g, "").split(' ');
+    console.log('Split Passage: ', splitPassage);
     const splitUser = userInput.split(' ');
+    console.log('Split User InputL ', splitUser);
     const total = splitPassage.length;
     let score = 0;
 
-    for ( let i = 0; i < splitPassage.length; i++ ) {
-      score = splitUser[i] == splitPassage[i] ? score + 1  : score;
+    for ( let i = 0; i < this.userInput.length; i++ ) {
+      score = splitUser[i] == splitPassage[i] ? score + 1  : score + 0;
     }
+    console.log('Score: ', score);
     this.result = Math.ceil(score / total * 100 );
     this.showResult = true;
-    console.log('User Input: ', this.result);
+    console.log('Result: ', this.result);
   }
 
   toggleResultDisplay(){
