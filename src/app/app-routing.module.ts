@@ -7,16 +7,26 @@ import { ReadingComponent } from './reading/reading.component';
 import { ListeningComponent } from './listening/listening.component';
 import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
 import { NeverActivateGuard } from './share/never-activate.guard';
+import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
+import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
   {path: 'speaking', component: SpeakingComponent, children: [
-    {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  }
+    {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  },
+    {path: '**', component: ComingSoonComponent}
   ]},
-  {path: 'writing', component: WritingComponent},
-  {path: 'reading', component: ReadingComponent},
-  {path: 'listening', component: ListeningComponent},
+  {path: 'writing', component: WritingComponent, children: [
+    {path: 'summarize-written-text', component: SummarizeWrittenTextComponent, pathMatch: 'full'  },
+    {path: '**', component: ComingSoonComponent}
+  ]},
+  {path: 'reading', component: ReadingComponent, children: [
+    {path: '**', component: ComingSoonComponent}
+  ]},
+  {path: 'listening', component: ListeningComponent, children: [
+    {path: '**', component: ComingSoonComponent}
+  ]},
 ];
 
 

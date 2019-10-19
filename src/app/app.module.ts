@@ -17,6 +17,8 @@ import { BarChartComponent } from './profile/bar-chart/bar-chart.component';
 import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
 import { RepeatSentenceComponent } from './speaking/repeat-sentence/repeat-sentence.component';
 import { DescribeImageComponent } from './speaking/describe-image/describe-image.component';
+import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
+import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { DescribeImageComponent } from './speaking/describe-image/describe-image
     BarChartComponent,
     ReadAloudComponent,
     RepeatSentenceComponent,
-    DescribeImageComponent
+    DescribeImageComponent,
+    SummarizeWrittenTextComponent,
+    ComingSoonComponent
   ],
   imports: [
     BrowserModule,
