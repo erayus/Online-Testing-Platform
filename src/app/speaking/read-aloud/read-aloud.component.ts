@@ -23,8 +23,7 @@ export class ReadAloudComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,|"/g, "").split(' ');
-    console.log('Split Passage: ', splitPassage);
+
   }
   triggerTest(){
     switch (this.testMode) {
@@ -109,16 +108,25 @@ export class ReadAloudComponent implements OnInit {
 
   compare(userInput: string){
     console.log("User Input:", userInput);
-    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,/g, "").split(' ');
+    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,|"/g, "").split(' ');
     console.log('Split Passage: ', splitPassage);
-    const splitUser = userInput.split(' ');
-    console.log('Split User InputL ', splitUser);
+    const splitUserInput = userInput.split(' ');
+    console.log('Split User InputL ', splitUserInput);
     const total = splitPassage.length;
     let score = 0;
 
-    for ( let i = 0; i < this.userInput.length; i++ ) {
-      score = splitUser[i] == splitPassage[i] ? score + 1  : score + 0;
+    let passageIndex = 0;
+    let userIndex = 0;
+    while (passageIndex < splitPassage.length && userIndex < splitUserInput.length) {
+      if (splitUserInput[userIndex] === splitPassage[passageIndex]) {
+        score += 1;
+        passageIndex += 1;
+        userIndex += 1;
+      } else{
+        passageIndex += 1;
+      }
     }
+
     console.log('Score: ', score);
     this.result = Math.ceil(score / total * 100 );
     this.showResult = true;
