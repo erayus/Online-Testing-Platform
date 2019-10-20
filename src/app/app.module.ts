@@ -20,7 +20,8 @@ import { DescribeImageComponent } from './speaking/describe-image/describe-image
 import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
 import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-the-blanks.component';
-import { SummarzieSpokenTextComponent } from './listening/summarzie-spoken-text/summarzie-spoken-text.component';
+import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
+import { TestExplanationComponent } from './share/test-explanation/test-explanation.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { SummarzieSpokenTextComponent } from './listening/summarzie-spoken-text/
     SummarizeWrittenTextComponent,
     ComingSoonComponent,
     FillInTheBlanksComponent,
-    SummarzieSpokenTextComponent
+    SummarizeSpokenTextComponent,
+    TestExplanationComponent,
+
   ],
   imports: [
     BrowserModule,

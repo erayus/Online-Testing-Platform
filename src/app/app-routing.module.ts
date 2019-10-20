@@ -10,6 +10,7 @@ import { NeverActivateGuard } from './share/never-activate.guard';
 import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
 import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 import { FillInTheBlanksComponent } from "./reading/fill-in-the-blanks/fill-in-the-blanks.component";
+import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'listening', component: ListeningComponent, children: [
+    {path: 'summarize-spoken-text', component: SummarizeSpokenTextComponent, pathMatch: 'full'  },
     {path: '**', component: ComingSoonComponent}
   ]},
 ];
