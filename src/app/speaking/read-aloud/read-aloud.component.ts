@@ -115,18 +115,11 @@ export class ReadAloudComponent implements OnInit {
     const total = splitPassage.length;
     let score = 0;
 
-    let passageIndex = 0;
-    let userIndex = 0;
-    while (passageIndex < splitPassage.length && userIndex < splitUserInput.length) {
-      if (splitUserInput[userIndex] === splitPassage[passageIndex]) {
-        score += 1;
-        passageIndex += 1;
-        userIndex += 1;
-      } else{
-        passageIndex += 1;
-      }
-    }
-
+    // Loop through each word of the user input
+      // Loop through the testing passage from the "Correct Word Index"
+      // If not correct, continue
+      // If correct:
+        // Increase the score
     console.log('Score: ', score);
     this.result = Math.ceil(score / total * 100 );
     this.showResult = true;

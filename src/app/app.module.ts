@@ -19,6 +19,7 @@ import { RepeatSentenceComponent } from './speaking/repeat-sentence/repeat-sente
 import { DescribeImageComponent } from './speaking/describe-image/describe-image.component';
 import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
 import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
+import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-the-blanks.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
     RepeatSentenceComponent,
     DescribeImageComponent,
     SummarizeWrittenTextComponent,
-    ComingSoonComponent
+    ComingSoonComponent,
+    FillInTheBlanksComponent
   ],
   imports: [
     BrowserModule,
