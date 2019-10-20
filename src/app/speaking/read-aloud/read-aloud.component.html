@@ -1,21 +1,11 @@
 <div class="read-aloud-wrapper pt-5">
-  <div class="bg-white container p-1 rounded mb-3">
-    <strong style="color: #3f51b5"><em>Look at the text below.
+  <app-test-explanation>
       In 40 seconds, you must read this text aloud as naturally and clearly as possible.
       You have 40 seconds to read aloud.
-    </em>
-    </strong>
-  </div>
+  </app-test-explanation>
 
 
-  <button
-    class= "btn"
-    [ngClass]="{
-      'btn-primary': testMode == 'start',
-      'btn-danger': testMode == 'stop' ,
-      'btn-info': testMode == 'retry'}"
-      (click)="triggerTest()">{{testMode}}</button>
-  <div *ngIf="!isRecording">Beginning in {{prepareDuration}} seconds</div>
+
   <div *ngIf="isRecording">Recording ends in {{recordingDuration}} seconds</div>
   <br/>
   <div class="container border pt-3 z-depth-1">
@@ -27,7 +17,18 @@
           This means that later generations are likely to inherit these stronger genetic traits.
         </p>
   </div>
+
+  <button
+  class= "btn"
+  [ngClass]="{
+    'btn-primary': testMode == 'start',
+    'btn-danger': testMode == 'stop' ,
+    'btn-info': testMode == 'retry'}"
+    (click)="triggerTest()">{{testMode}}</button>
+  <div *ngIf="!isRecording">Beginning in {{prepareDuration}} seconds</div>
+
   <div class="result-overlay" *ngIf="showResult" (click)="toggleResultDisplay()" >
+
     <div class="result animated bounce">
       <h1>Result</h1>
       <h2>{{result}}%</h2>
