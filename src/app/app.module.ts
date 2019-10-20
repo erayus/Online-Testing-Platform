@@ -20,6 +20,7 @@ import { DescribeImageComponent } from './speaking/describe-image/describe-image
 import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
 import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-the-blanks.component';
+import { SummarzieSpokenTextComponent } from './listening/summarzie-spoken-text/summarzie-spoken-text.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-t
     DescribeImageComponent,
     SummarizeWrittenTextComponent,
     ComingSoonComponent,
-    FillInTheBlanksComponent
+    FillInTheBlanksComponent,
+    SummarzieSpokenTextComponent
   ],
   imports: [
     BrowserModule,
