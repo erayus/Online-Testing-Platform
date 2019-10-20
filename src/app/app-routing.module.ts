@@ -9,7 +9,7 @@ import { ReadAloudComponent } from './speaking/read-aloud/read-aloud.component';
 import { NeverActivateGuard } from './share/never-activate.guard';
 import { SummarizeWrittenTextComponent } from './writing/summarize-written-text/summarize-written-text.component';
 import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
-
+import { FillInTheBlanksComponent } from "./reading/fill-in-the-blanks/fill-in-the-blanks.component";
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
@@ -22,6 +22,7 @@ const routes: Routes = [
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'reading', component: ReadingComponent, children: [
+    {path: 'fill-in-the-blanks', component: FillInTheBlanksComponent, pathMatch: 'full'  },
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'listening', component: ListeningComponent, children: [
