@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: '', component: ProfileComponent},
   {path: 'speaking', component: SpeakingComponent, children: [
     {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  },
+    {path: 'repeat-sentence', component: ReadAloudComponent , pathMatch: 'full'  },
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'writing', component: WritingComponent, children: [
