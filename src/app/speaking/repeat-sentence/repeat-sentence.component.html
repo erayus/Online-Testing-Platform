@@ -1,4 +1,26 @@
-<app-test-explanation>
-  You will hear a sentence. Please repeat the sentence exactly as you hear it. You will hear the sentence only once.
-</app-test-explanation>
+<div class="pt-3">
+  <app-test-explanation>
+    You will hear a sentence. Please repeat the sentence exactly as you hear it. You will hear the sentence only once.
+  </app-test-explanation>
+  <div class="row mx-auto justify-content-center">
+      <div class="audio-container block col-sm-9 col-md-3 mt-5">
+          <audio controls id="player" class="w-100">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/test.mp3" type="audio/mpeg">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/audio.ogg" type="audio/ogg">
+            <track src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/transcription.vtt" label="English Captions" kind="subtitles" srclang="en-us" default />
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+  </div>
+  <div class="row mx-auto justify-content-center">
+      <div class="answer-container mt-2 text-center col-sm-9 col-md-3">
+          <div class="answer-header">Your answer:</div>
+          <textarea class="answer w-100 z-depth-2 rounded"></textarea>
+          <button class="btn btn-success ">Submit</button>
+      </div>
+
+  </div>
+
+</div>
+
 
