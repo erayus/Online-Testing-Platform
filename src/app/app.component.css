@@ -13,4 +13,22 @@
   color: dodgerblue !important;
   border-radius: 2px;
 }
-
+.setting-btn{
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  border-radius: 100%;
+  right: 30px;
+  bottom: 30px;
+  border: none;
+  font-size: 25px;
+  background: dodgerblue;
+  color: white;
+}
+.setting-btn:focus{
+  outline: none;
+}
+.setting-btn:hover{
+  scale: 2;
+}
