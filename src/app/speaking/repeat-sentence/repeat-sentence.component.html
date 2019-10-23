@@ -3,15 +3,15 @@
     You will hear a sentence. Please repeat the sentence exactly as you hear it. You will hear the sentence only once.
   </app-test-explanation>
   <div class="row mx-auto justify-content-center">
-      <div class="audio-container block col-sm-9 col-md-3 mt-5">
-          <audio controls id="player" class="w-100">
-            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/test.mp3" type="audio/mpeg">
-            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/audio.ogg" type="audio/ogg">
-            <track src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/transcription.vtt" label="English Captions" kind="subtitles" srclang="en-us" default />
-            Your browser does not support HTML5 audio.
-          </audio>
-        </div>
-  </div>
+      <div class="audio-container col-sm-9 col-md-3 my-5 ">
+          <h4 class="text-center">Audio starts in {{timeLeft}}</h4>
+          <button class="btn audio-progress blue-gradient w-100 rounded-pill" >
+              <div class="progress md-progress" style="height: 20px">
+                  <div class="progress-bar" role="progressbar" style="width: 5%; height: 20px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+          </button>
+      </div>
+    </div>
   <div class="row mx-auto justify-content-center">
       <div class="answer-container mt-2 text-center col-sm-9 col-md-3">
           <div class="answer-header">Your answer:</div>

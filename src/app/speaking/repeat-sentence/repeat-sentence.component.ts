@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-repeat-sentence',
@@ -7,12 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepeatSentenceComponent implements OnInit {
 
+  @ViewChild('audioPlayer',{static: true})
+  audioPlayerRef: ElementRef;
+
   audioSrc: string;
   answerScript: string;
   userAnswer = '';
+  timeLeft = 3;
+  preparationInterval;
   constructor() { }
 
   ngOnInit() {
+    this.preparationInterval = setInterval(() => {
+      this.timeLeft -=1;
+      if (this.timeLeft == 0){
+        clearInterval(this.preparationInterval);
+        this.audioPlayerRef.nativeElement.play();
+      }
+    }, 1000);
     this.answerScript = 'This is an audio recording. You are hearing the audio';
   }
   submitAnswer(){

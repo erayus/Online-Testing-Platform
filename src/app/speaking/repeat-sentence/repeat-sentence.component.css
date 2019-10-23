@@ -1,0 +1,10 @@
+#player:focus{
+  outline: none;
+}
+textarea:focus{
+  outline: none;
+}
+
+.audio-progress{
+  height: 60px;
+}
