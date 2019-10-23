@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AmazonService } from './amazon-service.service';
 import { ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common';
-
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +22,13 @@ export class AppComponent implements OnInit {
       this._location.onUrlChange((url) => {
         this.pathList = url.split('/');
       })
+    }
+
+    mouseEnter() {
+      $('.dropdown-toggle').dropdown('toggle');
+    }
+    mouseLeave(){
+      $('.dropdown-toggle').dropdown('toggle');
     }
 
 }

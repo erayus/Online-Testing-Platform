@@ -15,11 +15,12 @@
   <div class="row mx-auto justify-content-center">
       <div class="answer-container mt-2 text-center col-sm-9 col-md-3">
           <div class="answer-header">Your answer:</div>
-          <textarea class="answer w-100 z-depth-2 rounded"></textarea>
-          <button class="btn btn-success ">Submit</button>
+          <textarea class="answer w-100 z-depth-2 rounded" autofocus [(ngModel)]="userAnswer"></textarea>
+          <button class="btn btn-success " (click)="submitAnswer()">Submit</button>
       </div>
 
   </div>
+
 
 </div>
 

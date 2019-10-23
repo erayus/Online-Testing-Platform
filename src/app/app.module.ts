@@ -22,6 +22,8 @@ import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-the-blanks.component';
 import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
 import { TestExplanationComponent } from './share/test-explanation/test-explanation.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { TestExplanationComponent } from './share/test-explanation/test-explanat
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ChartsModule
