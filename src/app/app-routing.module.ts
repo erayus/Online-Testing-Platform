@@ -12,24 +12,26 @@ import { ComingSoonComponent } from './share/coming-soon/coming-soon.component';
 import { FillInTheBlanksComponent } from "./reading/fill-in-the-blanks/fill-in-the-blanks.component";
 import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
 import { RepeatSentenceComponent } from './speaking/repeat-sentence/repeat-sentence.component';
+import { WriteFromDictationComponent } from './listening/write-from-dictation/write-from-dictation.component';
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
   {path: 'speaking', component: SpeakingComponent, children: [
     {path: 'read-aloud', component: ReadAloudComponent , pathMatch: 'full'  },
-    {path: 'repeat-sentence', component: RepeatSentenceComponent , pathMatch: 'full'  },
+    {path: 'repeat-sentence', component: RepeatSentenceComponent , pathMatch: 'full'},
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'writing', component: WritingComponent, children: [
-    {path: 'summarize-written-text', component: SummarizeWrittenTextComponent, pathMatch: 'full'  },
+    {path: 'summarize-written-text', component: SummarizeWrittenTextComponent, pathMatch: 'full'},
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'reading', component: ReadingComponent, children: [
-    {path: 'fill-in-the-blanks', component: FillInTheBlanksComponent, pathMatch: 'full'  },
+    {path: 'fill-in-the-blanks', component: FillInTheBlanksComponent, pathMatch: 'full'},
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'listening', component: ListeningComponent, children: [
-    {path: 'summarize-spoken-text', component: SummarizeSpokenTextComponent, pathMatch: 'full'  },
+    {path: 'summarize-spoken-text', component: SummarizeSpokenTextComponent, pathMatch: 'full'},
+    {path: 'write-from-dictation', component: WriteFromDictationComponent, pathMatch: 'full'},
     {path: '**', component: ComingSoonComponent}
   ]},
 ];

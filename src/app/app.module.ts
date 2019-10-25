@@ -23,6 +23,7 @@ import { FillInTheBlanksComponent } from './reading/fill-in-the-blanks/fill-in-t
 import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
 import { TestExplanationComponent } from './share/test-explanation/test-explanation.component';
 import { FormsModule } from '@angular/forms';
+import { WriteFromDictationComponent } from './listening/write-from-dictation/write-from-dictation.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     FillInTheBlanksComponent,
     SummarizeSpokenTextComponent,
     TestExplanationComponent,
+    WriteFromDictationComponent,
 
   ],
   imports: [
