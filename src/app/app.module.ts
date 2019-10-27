@@ -24,6 +24,7 @@ import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/
 import { TestExplanationComponent } from './share/test-explanation/test-explanation.component';
 import { FormsModule } from '@angular/forms';
 import { WriteFromDictationComponent } from './listening/write-from-dictation/write-from-dictation.component';
+import { EssayComponent } from './writing/essay/essay.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { WriteFromDictationComponent } from './listening/write-from-dictation/wr
     SummarizeSpokenTextComponent,
     TestExplanationComponent,
     WriteFromDictationComponent,
+    EssayComponent,
 
   ],
   imports: [
