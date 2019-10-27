@@ -13,6 +13,7 @@ import { FillInTheBlanksComponent } from "./reading/fill-in-the-blanks/fill-in-t
 import { SummarizeSpokenTextComponent } from './listening/summarize-spoken-text/summarize-spoken-text.component';
 import { RepeatSentenceComponent } from './speaking/repeat-sentence/repeat-sentence.component';
 import { WriteFromDictationComponent } from './listening/write-from-dictation/write-from-dictation.component';
+import { EssayComponent } from './writing/essay/essay.component';
 
 const routes: Routes = [
   {path: '', component: ProfileComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   ]},
   {path: 'writing', component: WritingComponent, children: [
     {path: 'summarize-written-text', component: SummarizeWrittenTextComponent, pathMatch: 'full'},
+    {path: 'essay', component: EssayComponent, pathMatch: 'full'},
     {path: '**', component: ComingSoonComponent}
   ]},
   {path: 'reading', component: ReadingComponent, children: [
