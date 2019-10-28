@@ -7,15 +7,31 @@
           <h4 class="text-center">Audio starts in {{timeLeft}}</h4>
           <button class="btn audio-progress blue-gradient w-100 rounded-pill" >
               <div class="progress md-progress" style="height: 10px">
-                  <div class="progress-bar" role="progressbar" [ngStyle]="{'width': audioProgress + '%' }" style="background: brown;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar"
+                       role="progressbar"
+                       [ngStyle]="{'width': audioProgress + '%' }"
+                       style="background: brown;"
+                       aria-valuenow="0" aria-valuemin="0"
+                       aria-valuemax="100"></div>
                 </div>
           </button>
       </div>
     </div>
   <div class="row mx-auto justify-content-center">
+    <div class="recording-container blue-gradient rounded">
+      <h5>Recording Status</h5>
+      <p>Time left: {{recordingDuration}} seconds</p>
+      <div class="progress md-progress p-1" style="height: 10px">
+        <div class="progress-bar"
+              role="progressbar"
+              [ngStyle]="{'width': recordingProgress + '%' }"
+              style="background: green;"
+              aria-valuenow="0" aria-valuemin="0"
+              aria-valuemax="100"></div>
+      </div>
+
+    </div>
   </div>
-
-
 </div>
 
 

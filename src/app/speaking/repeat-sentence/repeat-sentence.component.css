@@ -8,3 +8,7 @@ textarea:focus{
 .audio-progress{
   height: 60px;
 }
+.recording-container{
+  width: 300px;
+  padding: 10px;
+}
