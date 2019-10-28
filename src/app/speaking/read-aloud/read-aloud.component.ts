@@ -89,6 +89,7 @@ export class ReadAloudComponent implements OnInit {
                 if (this.recordingDuration > 0) {
                   this.recordingDuration -= 1;
                 } else {
+
                   clearInterval(this.recordingInterval);
                   this.testMode = 'retry';
                   this.isRecording = false;

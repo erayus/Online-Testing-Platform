@@ -10,17 +10,18 @@ declare var webkitSpeechRecognition: any;
 })
 export class RepeatSentenceComponent implements OnInit {
   audioSrc: string;
-  answerScript: string;
-  userAnswer = '';
   timeLeft = 3;
-  recordingDuration = 40;
   preparationInterval;
   audioProgress: number;
 
+  recordingDuration = 40;
+  recordingProgress: number;
   isRecording = false;
   recognition: any;
-  userInput: any;
-  testingPassage: any;
+
+  answerScript: string;
+  userInput: string;
+
 
 
   constructor() { }
@@ -47,11 +48,13 @@ export class RepeatSentenceComponent implements OnInit {
     const audioDurationInterval = setInterval(() => {
       currentDuration -= 1;
       this.audioProgress = 100 - Math.floor(currentDuration / initialDuration * 100);
-      if ( currentDuration === 0 ) { // After the audio is finished playing
+      console.log('Hello');
+      if ( currentDuration < 0 ) { // After the audio is finished playing
+        this.startRecording();
         clearInterval(audioDurationInterval);
       }
     }, 1000);
-  };
+  }
 
   startRecording() {
     if ("webkitSpeechRecognition" in window) {
@@ -75,9 +78,10 @@ export class RepeatSentenceComponent implements OnInit {
                   }
                 };
                 this.recordingDuration = 40;
-                let recordingInterval = setInterval(() => {
+                const recordingInterval = setInterval(() => {
                   if (this.recordingDuration > 0) {
                     this.recordingDuration -= 1;
+                    this.recordingProgress = 100 - Math.floor(this.recordingDuration / 40 * 100);
                   } else {
                     clearInterval(recordingInterval);
                     // this.testMode = 'retry';
@@ -95,7 +99,7 @@ export class RepeatSentenceComponent implements OnInit {
   }
   compare(userInput: string){
     console.log("User Input:", userInput);
-    const splitPassage = this.testingPassage.toLowerCase().replace(/\.|\,|"/g, "").split(' ');
+    const splitPassage = this.answerScript.toLowerCase().replace(/\.|\,|"/g, "").split(' ');
     console.log('Split Passage: ', splitPassage);
     const splitUserInput = userInput.split(' ');
     console.log('Split User InputL ', splitUserInput);
