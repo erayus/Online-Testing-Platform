@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./summarize-spoken-text.component.css']
 })
 export class SummarizeSpokenTextComponent implements OnInit {
-
+  answer = '';
   constructor() { }
-
   ngOnInit() {}
+
+  submitAnswer(){
+    alert('hello')
+  }
 }

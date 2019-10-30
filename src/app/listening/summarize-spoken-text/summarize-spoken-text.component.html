@@ -11,7 +11,9 @@
   </audio>
 </div>
 
-<textarea class="container rounded" id="answer" placeholder="Enter your summary here..."></textarea>
-
+<textarea class="container rounded" id="answer" placeholder="Enter your summary here..." [(ngModel)]="answer"></textarea>
+<div>
+  <button class="btn btn-success mx-auto" (click)="submitAnswer()">Submit</button>
+</div>
 
 </div>
