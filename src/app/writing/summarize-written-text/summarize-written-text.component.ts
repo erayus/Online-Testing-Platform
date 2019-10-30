@@ -11,5 +11,7 @@ export class SummarizeWrittenTextComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  submitAnswer(){
+    alert('Submitted');
+  }
 }

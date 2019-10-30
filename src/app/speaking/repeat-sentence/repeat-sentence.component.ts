@@ -22,6 +22,7 @@ export class RepeatSentenceComponent implements OnInit {
   answerScript: string;
   userInput: string;
 
+  buttonStatus = 'Stop';
 
 
   constructor() { }
