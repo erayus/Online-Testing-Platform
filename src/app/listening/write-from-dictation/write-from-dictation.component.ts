@@ -12,6 +12,7 @@ export class WriteFromDictationComponent implements OnInit {
   userAnswer = '';
   timeLeft = 3;
   preparationInterval;
+  showPreparationTimeLeft = true;
   audioProgress: number;
   constructor() { }
 
@@ -23,7 +24,8 @@ export class WriteFromDictationComponent implements OnInit {
         this.timeLeft -=1;
         if (this.timeLeft === 0){
           clearInterval(this.preparationInterval);
-          audio.play()
+          audio.play();
+          this.showPreparationTimeLeft = false;
           this.updateAudioProgressBar(totalDuration);
         }
       }, 1000);

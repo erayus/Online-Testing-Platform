@@ -4,7 +4,7 @@
   </app-test-explanation>
   <div class="row mx-auto justify-content-center">
       <div class="audio-container col-sm-9 col-md-3 my-2 ">
-          <h4 class="text-center">Audio starts in {{timeLeft}}</h4>
+          <h4 class="text-center" *ngIf="showPreparationTimeLeft">Audio starts in {{timeLeft}}</h4>
           <button class="btn audio-progress blue-gradient w-100 rounded-pill" >
               <div class="progress md-progress" style="height: 10px">
                   <div class="progress-bar" role="progressbar" [ngStyle]="{'width': audioProgress + '%' }" style="background: brown;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
