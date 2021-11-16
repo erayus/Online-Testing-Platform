@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
     "animate.css": "^3.7.2",
-    "aws-sdk": "^2.546.0",
+    "aws-sdk": "^2.814.0",
     "chart.js": "^2.8.0",
     "mdbootstrap": "^4.8.10",
     "ng2-charts": "^2.3.0",
